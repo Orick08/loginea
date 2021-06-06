@@ -1,10 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminComponent } from './components/admin/admin.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { PrivateComponent } from './components/private/private.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'private', component: PrivateComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'login', component: LoginComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
