@@ -12,4 +12,13 @@ export class AuthService {
   sigin(user: object) {
     return this.http.post(`${this.URL}/user/singin`, user);
   }
+
+  isAuth(): boolean {
+    const token = localStorage.getItem('sesTokenAE');
+    if (!localStorage.getItem('sesTokenAE')) {
+      false;
+    } else {
+      true;
+    }
+  }
 }
