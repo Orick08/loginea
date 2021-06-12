@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 router.post('/singin', (req, res) => {
   const { email, password } = req.body;
 
-  db.query('SELECT idusuario, email FROM usuarios WHERE email = ? AND password = ? LIMIT 1', [email, password],
+  db.query('SELECT idusuario, email, role FROM usuarios WHERE email = ? AND password = ? LIMIT 1', [email, password],
     (error, rows, fileds) => {
       if (error) {
         console.error(error);
